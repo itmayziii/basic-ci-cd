@@ -2,7 +2,9 @@ run:
   modules-download-mode: 'readonly'
   timeout: 5m
 output:
-  format: 'line-number'
+  formats:
+    - format: 'line-number'
+      path: stdout
 linters:
   disable-all: true
   enable:
