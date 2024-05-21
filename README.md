@@ -13,7 +13,3 @@ go run cmd/server/server.go
     ```shell
     curl -X POST -d "tommy" localhost:8080/echo
     ```
-
-## CI
-
-
