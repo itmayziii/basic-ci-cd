@@ -1,0 +1,25 @@
+steps:
+  - id: 'install-dependencies'
+    name: 'golang:1.22-alpine'
+    entrypoint: 'go'
+    args: [
+      'mod',
+      'download'
+    ]
+    waitFor: ['-'] # Run immediately
+
+  - id: 'lint'
+    name: 'golangci/golangci-lint:v1.58-alpine'
+    entrypoint: 'golangci-lint'
+    args: [
+      '--color',
+      'never',
+      'run',
+      './...'
+    ]
+    waitFor: ['-'] # Run immediately
+
+options:
+  logging: 'CLOUD_LOGGING_ONLY'
+tags: ['lint']
+timeout: '600s' # 10 minutes
