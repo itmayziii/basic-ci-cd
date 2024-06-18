@@ -1,14 +1,12 @@
 steps:
   - id: 'deploy'
-    name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:alpine'
-    entrypoint: 'gcloud'
-    args: [
-      'run',
-      'deploy',
-      'basic-ci-cd-sandbox-$REF_NAME',
-      '--image=$_IMAGE_TAG',
-      '--max-instances=1',
-      '--ingress=all',
-      '--region=us-central1',
-      '--allow-unauthenticated'
-    ]
+    name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    script: |
+      #!/usr/bin/env bash
+      TAG=$(awk -F: '{print $NF}' <<< $_IMAGE)
+      gcloud run deploy basic-ci-cd-sandbox-$TAG --image=$_IMAGE --max-instances=1 --ingress=all \
+        --region=us-central1 --allow-unauthenticated
+
+options:
+  automapSubstitutions: true
+
