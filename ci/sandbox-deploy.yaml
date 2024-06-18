@@ -10,6 +10,5 @@ steps:
       '--max-instances=1',
       '--ingress=all',
       '--region=us-central1',
-      '--namespace=sandbox',
       '--allow-unauthenticated'
     ]
