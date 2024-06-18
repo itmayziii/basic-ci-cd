@@ -9,7 +9,7 @@ import (
 )
 
 func rootHandler(w http.ResponseWriter, r *http.Request) {
-	_, err := io.WriteString(w, "Hello World")
+	_, err := io.WriteString(w, "Hello World - tommy")
 	if err != nil {
 		log.Printf("could not write response: %v", err)
 	}
