@@ -8,5 +8,8 @@ steps:
       'basic-ci-cd-sandbox-$REF_NAME',
       '--image=$_IMAGE_TAG',
       '--max-instances=1',
-      '--ingress=all'
+      '--ingress=all',
+      '--region=us-central1',
+      '--namespace=sandbox',
+      '--allow-unauthenticated'
     ]
