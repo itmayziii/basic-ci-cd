@@ -5,8 +5,8 @@ steps:
     args: [
       'run',
       'deploy',
-      'basic-ci-cd-sandbox-$REF_NAME'
-      '--image=$_IMAGE_TAG'
-      '--max-instances=1'
+      'basic-ci-cd-sandbox-$REF_NAME',
+      '--image=$_IMAGE_TAG',
+      '--max-instances=1',
       '--ingress=all'
     ]
