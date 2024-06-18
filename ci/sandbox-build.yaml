@@ -1,7 +1,7 @@
 steps:
   - id: build
     name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/docker-us-central1/$REPO_NAME:$REF_NAME', '.']
+    args: ['build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/docker-us-central1/$REPO_NAME:$REF_NAME-$COMMIT_SHA', '.']
 
 images:
   - 'us-central1-docker.pkg.dev/$PROJECT_ID/docker-us-central1/$REPO_NAME:$REF_NAME'

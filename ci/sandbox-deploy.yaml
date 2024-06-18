@@ -1,0 +1,10 @@
+steps:
+  - id: build
+    name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:alpine'
+    entrypoint: 'gcloud'
+    args: [
+      'build',
+      '-t',
+      'us-central1-docker.pkg.dev/$PROJECT_ID/docker-us-central1/$REPO_NAME:$TAG_NAME',
+      '.'
+    ]
